@@ -1,0 +1,56 @@
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+<ion-header class="ion-no-border">
+	<ion-toolbar>
+    <div class="back-circle"></div>
+    <ion-title class="ion-text-center custom-font">Affect</ion-title>
+    <ion-buttons slot="start" > 
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content fullscreen="true">
+
+  <svg class="back-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <path fill="#8295A3" d="M68.6,-33.5C81.6,-17.2,79.6,13.8,65.7,37.6C51.8,61.3,25.9,77.8,2.1,76.6C-21.7,75.4,-43.5,56.5,-54.2,34.6C-65,12.7,-64.8,-12.3,-53.9,-27.4C-43,-42.4,-21.5,-47.6,3.2,-49.4C27.9,-51.2,55.7,-49.7,68.6,-33.5Z" transform="translate(100 100)" />
+</svg>
+  
+
+<ion-content>
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title >Title : {{ data.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="ion-text-left">
+      
+      <ion-card-subtitle class="ion-text-right">{{data.subject}}</ion-card-subtitle>
+      <ion-progress-bar value="0.5" color="red"></ion-progress-bar>
+      Affected users for this task : {{data.users.length}}/{{ data.max}}
+      <ion-progress-bar value="0.5" color="red"></ion-progress-bar>
+      <div *ngFor="let user of data.users">
+        {{user.username}} {{user.email}}
+        
+        </div>
+     
+      <div class="container-form-btn">
+       
+       
+      </div>  
+      
+      
+    </ion-card-content>
+  </ion-card>
+  <ion-toolbar color="dark">
+    <ion-searchbar (ionInput)="FilterJsonData($event)"></ion-searchbar>
+  </ion-toolbar>
+  <div class="ion-padding">
+    <ion-list>
+      <ion-item (click)="selectVal(user)" *ngFor="let user of availableUsers">
+        {{user.username}}
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+</ion-content>

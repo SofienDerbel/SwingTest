@@ -1,0 +1,46 @@
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div class="back-circle"></div>
+    <ion-title class="ion-text-center custom-font">
+      SwingApp
+    </ion-title>
+    <ion-buttons slot="start" > 
+    <ion-menu-button menu="main-menu"></ion-menu-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ 
+
+  <div id="container">
+    <strong class="ion-text-center custom-font" >Adding a new Task</strong>
+    
+    <div class="wrap-input">
+      <input class="input"  [(ngModel)]="title" type="text"  name="title" placeholder="Title">
+      </div>
+
+
+      <div class="wrap-input">
+        <input class="input"  [(ngModel)]="subject" type="text"  name="subject" placeholder="subject">
+        </div>
+
+        <div class="wrap-input">
+          <p class="ion-text-center custom-font" > Number of max users :</p>
+    
+          
+          <input class="input"  [(ngModel)]="max" type="number"  name="subject" placeholder="Max users">
+          </div>
+
+
+      <div class="container-form-btn">
+        <button class="form-btn custom-font" (click)="addTask()">
+        Submit
+        </button>
+      </div>   
+
+    
+  </div>
+</ion-content>
